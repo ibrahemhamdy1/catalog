@@ -22,7 +22,7 @@ APPLICATION_NAME = "Restaurant Menu Application"
 
 # Connect to Database and create database session
 #engine = create_engine('sqlite:///restaurantmenuwithusers.db')
-engine = create_engine('postgresql://catalog:11111@localhost/catalog')
+engine = create_engine('postgresql://catalog:password@localhost/catalog')
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind=engine)
@@ -126,7 +126,7 @@ def gconnect():
     output += '!</h1>'
     output += '<img src="'
     output += login_session['picture']
-     output += ' " style = "width: 300px; height: 300px;' \
+    output += ' " style = "width: 300px; height: 300px;' \
      'border-radius: 150px;-webkit-border-radius: 150px;' \
      '-moz-border-radius: 150px;"> '
     flash("you are now logged in as %s" % login_session['username'])
